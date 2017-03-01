@@ -1,15 +1,7 @@
 define([
-	'libs/jquery',
-	'libs/underscore',
-	'libs/backbone',
-	'utils/router'
-], function($, _, Backbone, Router){
-	var initialize = function(){
-		Router.initialize();
-	};
-
-	return{
-		initialize: initialize
-	};
-
-})
+  'libs/underscore',
+  'libs/jquery',
+  'utils/router'
+], function (_, $, Router) {
+  Router.initialize();
+});

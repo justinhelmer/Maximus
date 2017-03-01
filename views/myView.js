@@ -4,8 +4,8 @@ define([
   return Backbone.View.extend({
     el: $('#main_container'),
 
-    render: function () {
-      this.$el.html('<a href="/foo/bar/baz">Go To My Page</a>');
+    render: function(){
+      this.$el.html('This is my page. <a href="/">Go Home</a>');
     }
   });
 });

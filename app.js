@@ -1,17 +1,16 @@
-// Module dependencies.
-var application_root = __dirname,
-    express = require( 'express' ), //Web framework
-    path = require( 'path' ) //Utilities for dealing with file paths
-
-//Create server
+var express = require('express');
+var path = require('path');
 var app = express();
 
-//Where to serve static content
-app.use( express.static( path.join( application_root,'../home', 'site') ) );
+// static file serve
+app.use(express.static(__dirname));
 
-//Start server
+// not found in static files, so default to index.html
+app.use(function(req, res) {
+  res.sendFile(path.resolve(__dirname, 'index.html'));
+});
+
 var port = 4711;
-
-app.listen( port, function() {
-    console.log( 'Express server listening on port %d in %s mode', port, app.settings.env );
+app.listen(port, function () {
+  console.log('Express server listening on port %d in %s mode', port, app.settings.env);
 });
